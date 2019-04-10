@@ -127,7 +127,7 @@ public class LogFileTailer extends Thread
             // There is data to read
             file.seek( filePointer );
             String line = file.readLine();
-            while( line != null )
+            while( line != null && !line.isEmpty())
             {
               this.fireNewLogFileLine( line );
               line = file.readLine();
